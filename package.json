@@ -1,0 +1,15 @@
+{
+  "name": "gulp-atoms",
+  "version": "1.0.0",
+  "description": "Modular and reusable gulp tasks",
+  "main": "index.js",
+  "author": "Ricardo Casares",
+  "license": "ISC",
+  "dependencies": {
+    "deepmerge": "^1.3.0",
+    "gulp-help": "^1.6.1"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1"
+  }
+}
