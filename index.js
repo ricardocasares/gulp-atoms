@@ -44,7 +44,7 @@ function createTasks (gulp, opts) {
         gulp.task(config, atom.help, atom.task(gulp, configs[config]))
 
         if (atom.watch) {
-          gulp.task(`${config}:${wfix}`, atom.watch(gulp, configs[config]))
+          gulp.task(`${config}:${wfix}`, atom.watch(gulp, configs[config], config))
         }
       })
   }
