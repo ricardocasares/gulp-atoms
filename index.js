@@ -7,6 +7,7 @@ const keys = Object.keys
 const wfix = 'watch'
 const afix = 'gulp-atom-'
 const modules = 'node_modules'
+const byText = str => x => x.startsWith(str)
 
 module.exports = function (gulp, opts = {}) {
   gulp = help(gulp, opts.help || {})
@@ -20,7 +21,6 @@ module.exports = function (gulp, opts = {}) {
 // Finds and requires atoms inside your packages
 function atomsLookup () {
   const join = path.join
-  const byPrefix = x => y => y.startsWith(x)
   const packages = join(process.cwd(), modules)
   const load = atom => require(join(packages, atom))
   const lookup = src => fs
@@ -28,7 +28,7 @@ function atomsLookup () {
     .filter(file => fs
       .statSync(join(src, file))
       .isDirectory())
-    .filter(byPrefix(afix))
+    .filter(byText(afix))
     .map(load)
 
   return lookup(packages)
@@ -40,11 +40,11 @@ function createTasks (gulp, opts) {
     const configs = configLookup(atom, opts)
 
     keys(configs)
-      .forEach(config => {
-        gulp.task(config, atom.help, atom.task(gulp, configs[config]))
+      .forEach(name => {
+        gulp.task(name, atom.help, atom.task(gulp, configs[name]))
 
         if (atom.watch) {
-          gulp.task(`${config}:${wfix}`, atom.watch(gulp, configs[config], config))
+          gulp.task(`${name}:${wfix}`, atom.watch(gulp, configs[name], name))
         }
       })
   }
@@ -52,14 +52,13 @@ function createTasks (gulp, opts) {
 
 // Looks for different atom configurations
 function configLookup (atom, opts) {
-  const byName = x => x.startsWith(atom.name)
   const toObject = (x, y) => {
     x[y] = merge(atom.config, opts[y])
     return x
   }
 
   const configs = keys(opts)
-    .filter(byName)
+    .filter(byText(atom.name))
     .reduce(toObject, {})
 
   const defaultConfig = { [atom.name]: atom.config }
