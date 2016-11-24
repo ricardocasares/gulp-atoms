@@ -1,13 +1,13 @@
 {
   "name": "gulp-atoms",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Modular and reusable gulp tasks",
   "main": "index.js",
   "author": "Ricardo Casares",
   "license": "GPLv3",
-  "repository" : {
-    "type" : "git",
-    "url" : "https://github.com/ricardocasares/gulp-atoms.git"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ricardocasares/gulp-atoms.git"
   },
   "bugs": "https://github.com/ricardocasares/gulp-atoms/issues",
   "scripts": {
