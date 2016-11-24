@@ -7,7 +7,7 @@ let atoms
 test.before(t => {
   atoms = atomsLookup(`${__dirname}/fixtures`)
 })
-test('atomsLookup return', t => {
+test('atomsLookup returns installed atoms', t => {
 
   t.true(Array.isArray(atoms))
   t.is(atoms.pop().name, 'test')
