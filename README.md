@@ -30,7 +30,7 @@ We allow to pass different configurations to your atoms, this way you don't need
 
 To do so, add your atom configuration object as the second argument in `require('gulp-atoms')(gulp, {})`
 
-For example, if we are using `gulp-atom-copy`, which just copies files from one folder to another, first check what the default configuration looks like, lets say it looks like this:
+For example, if we are using [gulp-atom-copy](https://github.com/ricardocasares/gulp-atom-copy), which just copies files from one folder to another, first check what the default configuration looks like, lets say it looks like this:
 
 ```js
 {
