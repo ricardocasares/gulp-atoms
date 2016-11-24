@@ -4,7 +4,7 @@
   "description": "Modular and reusable gulp tasks",
   "main": "index.js",
   "author": "Ricardo Casares",
-  "license": "ISC",
+  "license": "GPLv3",
   "scripts": {
     "test": "ava test.js",
     "test:watch": "ava test.js --watch"
