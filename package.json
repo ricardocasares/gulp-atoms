@@ -1,6 +1,6 @@
 {
   "name": "gulp-atoms",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Modular and reusable gulp tasks",
   "main": "index.js",
   "author": "Ricardo Casares",
