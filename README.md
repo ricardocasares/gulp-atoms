@@ -3,10 +3,10 @@
 # gulp-atoms
 Modular and reusable gulp tasks
 
-## install
+## Install
 `npm install --save-dev gulp-atoms`
 
-## usage
+## Usage
 You'll first need to install `gulp` in your project
 
 `npm install --save-dev gulp`
@@ -76,6 +76,36 @@ gulp = require('gulp-atoms')(gulp, {
 ```
 
 This will provide you with 2 new tasks `ac:copy:js` and `ac:copy:html`. Note that the default task `ac:copy` will be no longer available.
+
+### Create some molecules!
+
+Once you have your atoms and configurations in place, it's time to create your task pipelines:
+
+```js
+let gulp = require('gulp')
+const cfg = require('./atoms.config')
+const seq = require('run-sequence')
+gulp = require('gulp-atoms')(gulp, cfg)
+
+// dev pipeline
+const dev = [
+  'ac:clean',
+  ['ac:copy:idx', 'ac:sass'],
+  ['ac:copy:idx:watch', 'ac:sass:watch', 'ac:bundle:watch'],
+  'ac:serve'
+]
+
+// build pipeline
+const build = [
+  'ac:clean',
+  ['ac:copy:idx', 'ac:sass', 'ac:bundle']
+]
+
+gulp
+  .task('dev', cb => seq.apply(seq, dev.concat(cb)))
+  .task('build', cb => seq.apply(seq, build.concat(cb)))
+```
+
 
 ## Authoring atoms
 
