@@ -106,6 +106,7 @@ gulp
   .task('build', cb => seq.apply(seq, build.concat(cb)))
 ```
 
+Clone the [atoms-example](https://github.com/ricardocasares/atoms-example) project to know how everything is being tied together.
 
 ## Authoring atoms
 
