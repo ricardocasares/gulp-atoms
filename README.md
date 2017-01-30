@@ -1,6 +1,8 @@
 [![Build Status](https://semaphoreci.com/api/v1/ricardocasares/gulp-atoms/branches/master/badge.svg)](https://semaphoreci.com/ricardocasares/gulp-atoms)
 
 # gulp-atoms
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/ricardocasares/gulp-atoms.svg)](https://greenkeeper.io/)
 Modular and reusable gulp tasks
 
 ## Install
