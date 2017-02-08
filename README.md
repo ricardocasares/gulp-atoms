@@ -163,4 +163,4 @@ To facilitate interoperability with another atom packages make sure to follow th
 
 ## Contribution
 
-Feel free to submit an issue to the project, and pull-requests are very welcome.
+Feel free to submit an issue to the project, and pull-requests are welcome.
